@@ -5,12 +5,12 @@ ayuda a tener un esquema visual para ver que hacer en cada caso.
 - Method: POST
 - Url: /api/users
 - Headers: XXXX
-- Body: firebaseId, email, province, provider
+- Body: name, surname, phone, age, available
 
 Response:
 
-- Status: 201
-- Body: XXXX
+- Status: 200
+- Body: El objeto con el estudiante creado
 
 ## Actualizar estudiante
 
@@ -23,3 +23,6 @@ Response:
 
 - Status: 200
 - Body: La información del usuario actualizada.
+
+PUT: Actualización completa de todos los datos.
+PATCH: Actualización de un solo dato.

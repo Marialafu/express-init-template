@@ -1,3 +1,18 @@
 @HOST = http://localhost:3000
 
 GET {{HOST}}/api/students
+
+###
+//3 almoadillas mínimo para separación entre consultas.
+
+####
+POST {{HOST}}/api/students
+Content-Type: application/json
+
+{
+    "name": "Roberto",
+    "surname": "García",
+    "phone": "12345678",
+    "age": 34,
+    "available": true
+}

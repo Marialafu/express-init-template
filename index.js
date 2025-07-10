@@ -4,8 +4,9 @@ const app = require("./src/app");
 
 // Config .env
 require("dotenv").config();
-//Config DB
 
+//Config DB
+require('mongoose')
 
 // Server creation
 const server = http.createServer(app);

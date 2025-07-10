@@ -34,6 +34,8 @@ const editStudent = (req, res) => {
     //req.params - studentId
     const {studentId} = req.params
 
+    //si queremos hacer una comprobación, que sirve para algo general, es mejor no poner en cada una de las funciones. Se utilizan middelwares.
+
     const updatedStudent = Student.findByIdAndUpdate(studentId, req.body, {new: true})
     //de normal devuelve el original, tarda una vuelta en darnos el actualizado. Por eso ponemos el {new: true}, para que nos dé el actualizado.
 

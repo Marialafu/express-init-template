@@ -20,6 +20,7 @@ const createStudent = async (req, res) => {
     const {name, surname, phone, email} = req.body
 
     //validamos que ninguno falte, por que de por sí no da error.
+    //estas comprobaciones se hacen en el middleware de esta función.
     if (!name || !surname || !phone || !email){
         return res.status(400).json({message: 'Falta un dato'})
     }

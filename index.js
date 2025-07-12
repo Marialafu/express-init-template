@@ -1,6 +1,8 @@
 // Server creation and configuration
 const http = require("node:http");
-const app = require("./src/app");
+
+//librería nativa de node de file sistems
+const fs = require('node:fs/promises')
 
 // Config .env
 require("dotenv").config();
@@ -18,11 +20,13 @@ const server = http.createServer(app);
 const PORT = process.env.PORT || 3000;
 server.listen(PORT);
 
-//Middleware previo al api routes
+//Middleware previo al api routes. 
+//Este lo usamos para escribir en fichero.
 app.use((req, res, next) => {
-    console.log(new Date());
 
-    
+    //Texto para incluir en ficheros
+    const linea = `Method: ${req.method} Url: ${req.url}`
+    fs.appendFile('./main.log', linea)
     next()
 })
 
